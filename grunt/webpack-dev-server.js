@@ -43,8 +43,7 @@ module.exports = {
       plugins: [
         new webpack.LoaderOptionsPlugin({
           debug: true
-        }),
-        new OpenBrowserPlugin({ url: 'http://localhost:' + port })
+        })
       ]
     }
   }

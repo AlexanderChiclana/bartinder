@@ -1,11 +1,22 @@
 'use strict'
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+const getFormFields = require('../../lib/get-form-fields')
+const drinkAPI = require('./drinks/drinkAPI')
+const drinkUI = require('./drinks/drinkUI')
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
 
 $(() => {
-  // your JS code goes here
+  const onGetRandomDrink = function () {
+    event.preventDefault()
+    drinkAPI.getRandomDrink()
+      .then(drinkUI.getRandomDrinkSuccess)
+      .catch(drinkUI.failure)
+  }
+
+
+  $('#randomDrink').on('click', onGetRandomDrink)
+  $('#randomDrinkImg').on('click', onGetRandomDrink)
+
+
+
 })
