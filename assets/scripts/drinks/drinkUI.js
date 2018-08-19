@@ -1,3 +1,4 @@
+const drinkSearchTemplate = require('../templates/drink-search.handlebars')
 
 
 const getRandomDrinkSuccess = function (data) {
@@ -42,8 +43,12 @@ const getRandomDrinkSuccess = function (data) {
   // end modal content
 }
 
-const searchDrinkDatabaseSuccess = function () {
-
+const searchDrinkDatabaseSuccess = (data) => {
+  const showSearch = drinkSearchTemplate({
+    drinks: data.drinks
+    // this above line need to be fixed
+  })
+  $('#searchResults').html(showSearch)
 }
 
 const failure = function () {
