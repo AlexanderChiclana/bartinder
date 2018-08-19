@@ -29,5 +29,5 @@ $(() => {
   $('#randomDrinkImg').on('click', onGetRandomDrink)
   $('#drinkSearchForm').on('submit', onSearchDrinkDatabase)
 
-
+  onGetRandomDrink()
 })
