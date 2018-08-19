@@ -12,6 +12,17 @@ const getRandomDrink = function () {
   })
 }
 
-module.exports = {
-  getRandomDrink
+const searchDrinkDatabase = function (data) {
+  console.log('searching')
+  // console.log(data)
+  return $.ajax({
+    url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + data.drink.search,
+    method: 'GET'
+  })
 }
+
+module.exports = {
+  getRandomDrink,
+  searchDrinkDatabase
+}
+
