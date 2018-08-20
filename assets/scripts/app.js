@@ -1,5 +1,7 @@
 'use strict'
 
+require('./auth/auth')
+
 const getFormFields = require('../../lib/get-form-fields')
 const drinkAPI = require('./drinks/drinkAPI')
 const drinkUI = require('./drinks/drinkUI')
