@@ -27,9 +27,33 @@ $(() => {
 
   }
 
+  const onAddToCabinet = function () {
+    event.preventDefault()
+    console.log('working off click')
+    drinkAPI.addToCabinet()
+      // .then(drinkUI.addToCabinetSuccess)
+      // .catch(drinkUI.failure)
+  }
+
+  const onGetCabinet = function () {
+    event.preventDefault()
+    console.log('getting cabinet')
+    drinkAPI.getCabinet()
+      .then(drinkUI.getCabinetSuccess)
+      .catch(drinkUI.failure)
+  }
+
+  const showHomePage = function () {
+    $('#homepage').css('display', 'block')
+    $('#searchResults').css('display','none')
+  }
+
+
+
   $('#randomDrink').on('click', onGetRandomDrink)
   $('#randomDrinkImg').on('click', onGetRandomDrink)
   $('#drinkSearchForm').on('submit', onSearchDrinkDatabase)
-
-  onGetRandomDrink()
+  $('#addtoCabinetButton').on('click', onAddToCabinet)
+  $('#homepageButton').on('click', showHomePage)
+  $('#cabinetButton').on('click', onGetCabinet)
 })

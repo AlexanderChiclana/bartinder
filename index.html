@@ -2,6 +2,9 @@
 <html>
 
 <head>
+
+
+
   <title>BarTinder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,6 +20,8 @@
 
   <!-- navbar start  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
     <a class="navbar-brand" href="#">BarTinder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -26,23 +31,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="#" id="homepageButton">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#" id="cabinetButton">Cabinet
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            Dropdown
+            account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changePasswordModalCenter">Change Password</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logOutModalCenter">Sign Out</a>
           </div>
         </li>
         <li class="nav-item">
@@ -60,7 +68,58 @@
 
   <!-- navbar end  -->
 
-  <!-- Modal -->
+  <!-- navbar modals -->
+
+<div class="modal fade" id="logOutModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Log Out</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to log out?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <!-- sign out -->
+    <form id="sign-out">
+        <input type="submit" class="btn btn-primary" value="Sign Out">
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="changePasswordModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+              <!-- change pw -->
+    <form id="change-password">
+      <input type="password" name="passwords[old]" placeholder="Current Password" class="form-control">
+      <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
+
+
+        </div>
+        <div class="modal-footer">
+            <input type="submit" name="submit" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for content-->
   <div class="modal fade" id="instructionModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -132,9 +191,12 @@
 
   <div id="centeredContent" align="center">
 
+      <!-- homepage -->
+      <h1>BarTinder</h1>
+  <div id="homepage">
     <!-- random section -->
 
-    <h1>BarTinder</h1>
+
     <div class="card" style="width: 30rem;">
       <img id="randomDrinkImg" class="card-img-top" src="" alt="Card image cap">
       <div class="card-body">
@@ -174,7 +236,8 @@
     <button id="randomDrink" class="btn btn-secondary">Get Random Drink</button>
 
     <!-- end of random section -->
-
+    </div>
+    <!-- end of homepage -->
 
     <!-- area for handlebars search -->
     <div id="searchResults" class="content col-8">
@@ -208,21 +271,17 @@
       </div>
     </form>
 
-    <!-- sign out -->
-    <form id="sign-out">
-        <h4> Sign Out</h4>
-      <p id="sign-out-message"></p>
-      <input type="submit" class="btn btn-primary" value="Sign Out">
-    </form>
 
-    <!-- change pw -->
-    <form id="change-password">
-        <h4 id="passwordField">Change your password</h4>
-      <input type="password" name="passwords[old]" placeholder="Current Password" class="form-control">
-      <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
-      <input type="submit" name="submit" class="btn btn-primary">
-    </form>
+
     <!-- end auth -->
+
+    <!-- cabinet section  -->
+
+    <div id="cabinet">
+
+
+    </div>
+
   </div>
 </body>
 
