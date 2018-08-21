@@ -83,11 +83,51 @@ const deleteDrink = (drinkID) => {
   })
 }
 
+const updateDrink = function (data, drinkID) {
+  return $.ajax({
+    url: config.apiUrl + '/drinks/' + drinkID,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      drink: {
+        idDrink: drinkID,
+        strDrink: data.drink.strDrink,
+        strGlass: data.drink.strGlass,
+        strInstructions: data.drink.strInstructions,
+        strDrinkThumb: data.drink.strDrinkThumb,
+        strIngredient1: data.drink.strIngredient1,
+        strIngredient2: data.drink.strIngredient2,
+        strIngredient3: data.drink.strIngredient3,
+        strIngredient4: data.drink.strIngredient4,
+        strIngredient5: data.drink.strIngredient5,
+        strIngredient6: data.drink.strIngredient6,
+        strIngredient7: data.drink.strIngredient7,
+        strIngredient8: data.drink.strIngredient8,
+        strIngredient9: data.drink.strIngredient9,
+        strIngredient10: data.drink.strIngredient10,
+        strMeasure1: data.drink.strMeasure1,
+        strMeasure2: data.drink.strMeasure2,
+        strMeasure3: data.drink.strMeasure3,
+        strMeasure4: data.drink.strMeasure4,
+        strMeasure5: data.drink.strMeasure5,
+        strMeasure6: data.drink.strMeasure6,
+        strMeasure7: data.drink.strMeasure7,
+        strMeasure8: data.drink.strMeasure8,
+        strMeasure9: data.drink.strMeasure9,
+        strMeasure10: data.drink.strMeasure10
+      }
+    }
+  })
+}
+
 module.exports = {
   getRandomDrink,
   searchDrinkDatabase,
   addToCabinet,
   getCabinet,
-  deleteDrink
+  deleteDrink,
+  updateDrink
 }
 
