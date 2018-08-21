@@ -8,15 +8,14 @@
           <img src="{{drink.strDrinkThumb}}" class="w-100">
         </div>
         <div class="col-md-8 px-3">
-          <div class="card-block px-3">
-            <br>
-                     {{!-- close button --}}
+          <div class="card-block px-3" data-id="{{drink.id}}">
+            <br> {{!-- close button --}}
             <button type="button" class="close deleteDrink" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
             {{!-- end close --}}
 
-            {{!-- end edit --}}
+
             <h4 class="card-title">{{drink.strDrink}}</h4>
 
 
@@ -73,6 +72,11 @@
               {{drink.strInstructions}}
             </p>
 
+            <div data-id="{{drink.id}}">
+              <ion-icon name="create" id="update{{drink.id}}" class="updateDrink" data-toggle="modal" data-target="#editModal{{drink.id}}">
+              </ion-icon>
+            </div>
+            {{!-- end edit --}}
           </div>
         </div>
 
@@ -82,4 +86,40 @@
   </div>
 </section>
 
+
+
+{{!-- modal for recipes --}}
+<div class="modal fade" id="editModal{{drink.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{drink.strDrink}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <form id="{{drink.id}}" class="updater">
+          {{!--
+          <h4 class="display-4">Update Item</h4>
+          <input type='text' name='item[item_name]' class="form-control" value="{{drink.strDrink}}">
+
+          <textarea type='text' name='strInstructions[strInstructions]' class="form-control" rows="3">{{drink.strInstructions}}</textarea>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+        <input type='text' name='drink[strDrink]' class="form-control" value="{{drink.strDrink}}">
+        <textarea type='text' name='drink[strInstructions]' class="form-control" rows="3">{{drink.strInstructions}}</textarea>
+
+        <button type="button" class="btn btn-primary updateButton">Update</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {{/each}}

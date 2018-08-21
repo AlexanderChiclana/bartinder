@@ -35,7 +35,7 @@ $(() => {
       .catch(drinkUI.failure)
   }
 
-  const onGetCabinet = function () {
+  const onGetCabinet = function (event) {
     event.preventDefault()
     drinkAPI.getCabinet()
       .then(drinkUI.getCabinetSuccess)
@@ -50,10 +50,25 @@ $(() => {
   const onDeleteDrink = (event) => {
     event.preventDefault()
     console.log('delete button working')
-    // const itemId = $(event.target).closest('div').attr('data-id')
-    // bucketApi.deleteBlItem(itemId)
-    //   .then(() => onGetBlItems(event))
-    //   .catch(bucketUi.failure)
+    const drinkID = $(event.target).closest('div').attr('data-id')
+    console.log(drinkID)
+    drinkAPI.deleteDrink(drinkID)
+      .then(() => onGetCabinet(event))
+      .catch(drinkUI.failure)
+  }
+
+  const onUpdateDrink = function (event) {
+    event.preventDefault()
+    console.log('updating')
+    // const data = getFormFields(event.target.form)
+    const data = getFormFields(event.target.form)
+    // const drinkID = $(event.target).closest('div').attr('data-id')
+    console.log(data)
+    // console.log(drinkID)
+    // drinkAPI.updateDrink(data, drinkID)
+    // .then(() => onGetCabinet(event))
+    // .then(bucketUi.onUpdateItemSuccess)
+    // .catch(drinkUI.failure)
   }
 
   $('#randomDrink').on('click', onGetRandomDrink)
@@ -64,5 +79,6 @@ $(() => {
   $('#cabinetButton').on('click', onGetCabinet)
 
   $('#cabinet').on('click', '.deleteDrink', onDeleteDrink)
+  $('#cabinet').on('click', '.updateButton', onUpdateDrink)
 
 })

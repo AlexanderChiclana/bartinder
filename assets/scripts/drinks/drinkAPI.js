@@ -62,6 +62,7 @@ const addToCabinet = function () {
   })
 }
 
+
 const getCabinet = function () {
   return $.ajax({
     url: config.apiUrl + '/drinks',
@@ -72,10 +73,21 @@ const getCabinet = function () {
   })
 }
 
+const deleteDrink = (drinkID) => {
+  return $.ajax({
+    url: config.apiUrl + '/drinks/' + drinkID,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getRandomDrink,
   searchDrinkDatabase,
   addToCabinet,
-  getCabinet
+  getCabinet,
+  deleteDrink
 }
 
