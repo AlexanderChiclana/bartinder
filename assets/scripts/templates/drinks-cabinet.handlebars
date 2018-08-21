@@ -32,11 +32,14 @@
               </tr>
               <tr>
                 <td>{{drink.strIngredient2}}</td>
-                <td>{{drink.strMeasure2}}</td>
+                <td>{{drink.strMeasure2}}"
+                  <td>
               </tr>
               <tr>
-                <td>{{drink.strIngredient3}}</td>
-                <td>{{drink.strMeasure3}}</td>
+                <td>{{drink.strIngredient3}}
+                  <td>
+                    <td>{{drink.strMeasure3}}
+                      <td>
               </tr>
               <tr>
                 <td>{{drink.strIngredient4}}</td>
@@ -107,19 +110,69 @@
           <h4 class="display-4">Update Item</h4>
           <input type='text' name='item[item_name]' class="form-control" value="{{drink.strDrink}}">
 
-          <textarea type='text' name='strInstructions[strInstructions]' class="form-control" rows="3">{{drink.strInstructions}}</textarea>
+          <textarea type='text' name='strInstructions[strInstructions]' class="form-control" rows="3">{{drink.strInstructions}}">/textarea>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-        <input type='text' name='drink[strDrink]' class="form-control" value="{{drink.strDrink}}">
-        <textarea type='text' name='drink[strInstructions]' class="form-control" rows="3">{{drink.strInstructions}}</textarea>
+          <input type='text' name='drink[strDrink]' class="form-control" value="{{drink.strDrink}}">
 
-        <button type="button" class="btn btn-primary updateButton">Update</button>
+   <table style="width:100%">
+              <tr>
+                <th>Ingredient</th>
+                <th>Quantity</th>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strIngredient1}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure1}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient2]' class="form-control" value="{{drink.strIngredient2}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure2}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient3]' class="form-control" value="{{drink.strIngredient3}}"></td>
+                <td> <input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure3}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient4]' class="form-control" value="{{drink.strIngredient4}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure4}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient5]' class="form-control" value="{{drink.strIngredient5}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure5}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient6]' class="form-control" value="{{drink.strIngredient6}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure6}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient7]' class="form-control" value="{{drink.strIngredient7}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure7}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient8]' class="form-control" value="{{drink.strIngredient8}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure8}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient9]' class="form-control" value="{{drink.strIngredient9}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure9}}"></td>
+              </tr>
+              <tr>
+                <td> <input type='text' name='drink[strIngredient10]' class="form-control" value="{{drink.strIngredient10}}"></td>
+                <td><input type='text' name='drink[strIngredient1]' class="form-control" value="{{drink.strMeasure10}}"></td>
+              </tr>
+            </table>
+
+        {{!-- <input type='text' name='drink[strDrink]' class="form-control" value="{{drink.strDrink}}"> --}}
+        <textarea type='text' name='drink[strInstructions]' class="form-control" rows="5">{{drink.strInstructions}}</textarea>
+
+          <button type="button" class="btn btn-primary updateButton">Update</button>
 
         </form>
       </div>
     </div>
   </div>
 </div>
+
 {{/each}}
