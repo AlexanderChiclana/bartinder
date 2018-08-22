@@ -51,12 +51,16 @@ const getRandomDrinkSuccess = function (data) {
 const searchDrinkDatabaseSuccess = (data) => {
   const showSearch = drinkSearchTemplate({
     drinks: data.drinks
+
     // this above line need to be fixed
   })
 
   $('#searchResults').html(showSearch)
   $('#searchResults').css('display', 'block')
   $('#homepage').css('display', 'none')
+  $('#ingredientSearchField').css('display', 'none')
+  $('#cabinet').css('display', 'none')
+
 }
 
 const searchIngredientDatabaseSuccess = (data) => {
@@ -65,8 +69,11 @@ const searchIngredientDatabaseSuccess = (data) => {
   })
 
   $('#ingredientSearchField').html(showIngredientSearch)
+  $('#ingredientSearchField').css('display', 'block')
+  $('#homepage').css('display', 'none')
+  $('#searchResults').css('display', 'none')
+  $('#cabinet').css('display', 'none')
 
-  // $('#searchResults').css('display', 'block')
   // $('#homepage').css('display', 'none')
 }
 
@@ -107,6 +114,8 @@ const getCabinetSuccess = (data) => {
   })
   console.log(data)
   $('#cabinet').html(showCabinet)
+  $('#searchResults').css('display', 'none')
+  $('#ingredientSearchField').css('display', 'none')
 }
 
 const onUpdateDrinkSuccess = function () {

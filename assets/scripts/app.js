@@ -44,7 +44,7 @@ $(() => {
     event.preventDefault()
     console.log('working off click')
     drinkAPI.addToCabinet()
-      .then(() => onGetCabinet(event))
+      // .then(() => onGetCabinet(event))
       .then(() => onGetRandomDrink(event))
       .then(drinkUI.addToCabinetSuccess)
       .catch(drinkUI.failure)
@@ -52,6 +52,9 @@ $(() => {
 
   const onGetCabinet = function (event) {
     event.preventDefault()
+    // $('#ingredientSearchField').css('display', 'block')
+    $('#homepage').css('display', 'none')
+    $('#cabinet').css('display', 'block')
     drinkAPI.getCabinet()
       .then(drinkUI.getCabinetSuccess)
       .catch(drinkUI.failure)
@@ -60,6 +63,9 @@ $(() => {
   const showHomePage = function () {
     $('#homepage').css('display', 'block')
     $('#searchResults').css('display', 'none')
+    $('#ingredientSearchField').css('display', 'none')
+    $('#cabinet').css('display', 'none')
+
   }
 
   const onDeleteDrink = (event) => {
@@ -180,4 +186,8 @@ $(() => {
   $('#addToCabinetModalButtonIngredient').on('click', onAddToCabinetFromIngredientSearch)
 
   $('#randomDrink').click()
+
+
+  // handlers for hiding and showing
+
 })
