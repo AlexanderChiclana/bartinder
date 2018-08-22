@@ -122,12 +122,57 @@ const updateDrink = function (data, drinkID) {
   })
 }
 
+const addToCabinetFromSearch = function ( idDrink, strDrink, strGlass, strInstructions, strDrinkThumb, strIngredient1,
+  strIngredient2, strIngredient3, strIngredient4, strIngredient5, strIngredient6,
+  strIngredient7, strIngredient8, strIngredient9, strIngredient10, strMeasure1,
+  strMeasure2, strMeasure3, strMeasure4, strMeasure5, strMeasure6, strMeasure7,
+  strMeasure8, strMeasure9, strMeasure10) {
+
+    return $.ajax({
+    url: config.apiUrl + '/drinks/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      drink: {
+        idDrink: idDrink,
+        strDrink: strDrink,
+        strGlass: strGlass,
+        strInstructions: strInstructions,
+        strDrinkThumb: strDrinkThumb,
+        strIngredient1: strIngredient1,
+        strIngredient2: strIngredient2,
+        strIngredient3: strIngredient3,
+        strIngredient4: strIngredient4,
+        strIngredient5: strIngredient5,
+        strIngredient6: strIngredient6,
+        strIngredient7: strIngredient7,
+        strIngredient8: strIngredient8,
+        strIngredient9: strIngredient9,
+        strIngredient10: strIngredient10,
+        strMeasure1: strMeasure1,
+        strMeasure2: strMeasure2,
+        strMeasure3: strMeasure3,
+        strMeasure4: strMeasure4,
+        strMeasure5: strMeasure5,
+        strMeasure6: strMeasure6,
+        strMeasure7: strMeasure7,
+        strMeasure8: strMeasure8,
+        strMeasure9: strMeasure9,
+        strMeasure10: strMeasure10
+      }
+    }
+  })
+}
+
 module.exports = {
   getRandomDrink,
   searchDrinkDatabase,
   addToCabinet,
   getCabinet,
   deleteDrink,
-  updateDrink
+  updateDrink,
+  addToCabinetFromSearch
 }
 

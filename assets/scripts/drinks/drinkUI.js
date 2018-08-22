@@ -59,6 +59,7 @@ const searchDrinkDatabaseSuccess = (data) => {
 }
 
 const addToCabinetSuccess = function () {
+
   console.log('added to cabinet')
 }
 
@@ -70,6 +71,9 @@ const getCabinetSuccess = (data) => {
   $('#cabinet').html(showCabinet)
 }
 
+const onUpdateDrinkSuccess = function () {
+  $('#cabinetButton').click()
+}
 const failure = function () {
   console.log('request failed')
 }
@@ -79,5 +83,6 @@ module.exports = {
   searchDrinkDatabaseSuccess,
   addToCabinetSuccess,
   getCabinetSuccess,
+  onUpdateDrinkSuccess,
   failure
 }
