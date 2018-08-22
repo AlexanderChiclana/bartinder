@@ -1,0 +1,16 @@
+<div class="row">
+
+  {{#each drinks as |drink|}} {{log drink}}
+
+  <div class="card col-4" style="width: 18rem;" id="cardTest{{drink.idDrink}}" data-id="{{drink.idDrink}}">
+    <img class="card-img-top" src="{{drink.strDrinkThumb}}" alt="Card image cap" class="ingredientImage">
+    <div class="card-body" data-id="{{drink.idDrink}}">
+      <h5 class="card-title">{{drink.strDrink}}</h5>
+        <button class="btn btn-secondary ingredientImage" type="submit">Instructions</button>
+
+    </div>
+  </div>
+
+  {{/each}}
+
+</div>

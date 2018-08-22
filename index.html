@@ -58,10 +58,16 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
-      <!-- search form  -->
+      <!-- search by ingredient -->
+      <form id="drinkIngredientSearchForm" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Ingredient</button>
+        </form>
+
+      <!-- search by name form  -->
       <form id="drinkSearchForm" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for Cocktails</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Name</button>
       </form>
 
     </div>
@@ -120,7 +126,7 @@
     </div>
   </div>
 
-  <!-- Modal for content-->
+  <!-- Modal for random content-->
   <div class="modal fade" id="instructionModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -187,8 +193,75 @@
     </div>
   </div>
 
-  <!-- modal end -->
+  <!-- modal random end -->
 
+  <!-- modal for ingredients -->
+  <div class="modal fade" id="ingredientModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Instructions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table style="width:100%">
+          <tr>
+            <th>Ingredient</th>
+            <th>Quantity</th>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient1"></td>
+            <td id="ingredientSearchModalQuantity1"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient2"></td>
+            <td id="ingredientSearchModalQuantity2"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient3"></td>
+            <td id="ingredientSearchModalQuantity3"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient4"></td>
+            <td id="ingredientSearchModalQuantity4"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient5"></td>
+            <td id="ingredientSearchModalQuantity5"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient6"></td>
+            <td id="ingredientSearchModalQuantity6"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient7"></td>
+            <td id="ingredientSearchModalQuantity7"></td>
+          </tr>
+          <tr>
+            <td id="ingredientSearchModalIngredient8"></td>
+            <td id="ingredientSearchModalQuantity8"></td>
+          </tr>
+        </table>
+        <br>
+        <p id="ingredientInstructions">
+
+        </p>
+        <br>
+        <p id="ingredientGlass">
+
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="addToCabinetModalButtonIngredient">add to cabinet</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- end modal for ingredients -->
 
   <div id="centeredContent" align="center">
 
@@ -282,6 +355,12 @@
 
 
     </div>
+
+    <!-- search by ingredient section  -->
+    <div id="ingredientSearchField" class="content col-8">
+
+
+      </div>
 
   </div>
   <script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>

@@ -1,5 +1,6 @@
 const drinkSearchTemplate = require('../templates/drink-search.handlebars')
 const drinkCabinetTemplate = require('../templates/drinks-cabinet.handlebars')
+const ingredientSearchTemplate = require('../templates/ingredient-search.handlebars')
 
 const store = require('../store')
 
@@ -58,6 +59,22 @@ const searchDrinkDatabaseSuccess = (data) => {
   $('#homepage').css('display', 'none')
 }
 
+const searchIngredientDatabaseSuccess = (data) => {
+  const showIngredientSearch = ingredientSearchTemplate({
+    drinks: data.drinks
+  })
+
+  $('#ingredientSearchField').html(showIngredientSearch)
+
+  // $('#searchResults').css('display', 'block')
+  // $('#homepage').css('display', 'none')
+}
+
+const getIngredientSuccess = function (data) {
+
+}
+
+
 const addToCabinetSuccess = function () {
 
   console.log('added to cabinet')
@@ -81,8 +98,10 @@ const failure = function () {
 module.exports = {
   getRandomDrinkSuccess,
   searchDrinkDatabaseSuccess,
+  searchIngredientDatabaseSuccess,
   addToCabinetSuccess,
   getCabinetSuccess,
   onUpdateDrinkSuccess,
+  getIngredientSuccess,
   failure
 }

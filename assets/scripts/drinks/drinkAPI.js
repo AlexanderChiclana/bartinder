@@ -12,11 +12,29 @@ const getRandomDrink = function () {
   })
 }
 
+const getIngredient = function (drinkID) {
+  console.log('getting drink details')
+  console.log(drinkID)
+  return $.ajax({
+    url: 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkID,
+    method: 'GET'
+  })
+}
+
 const searchDrinkDatabase = function (data) {
   console.log('searching')
   // console.log(data)
   return $.ajax({
     url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + data.drink.search,
+    method: 'GET'
+  })
+}
+
+const searchIngredientDatabase = function (data) {
+  console.log('searching')
+  // console.log(data)
+  return $.ajax({
+    url: 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + data.drink.search,
     method: 'GET'
   })
 }
@@ -169,10 +187,12 @@ const addToCabinetFromSearch = function ( idDrink, strDrink, strGlass, strInstru
 module.exports = {
   getRandomDrink,
   searchDrinkDatabase,
+  searchIngredientDatabase,
   addToCabinet,
   getCabinet,
   deleteDrink,
   updateDrink,
-  addToCabinetFromSearch
+  addToCabinetFromSearch,
+  getIngredient
 }
 
