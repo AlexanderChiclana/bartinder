@@ -71,7 +71,28 @@ const searchIngredientDatabaseSuccess = (data) => {
 }
 
 const getIngredientSuccess = function (data) {
+  store.drinksFromIngredientSearch = data.drinks[0]
 
+  $('#ingredientSearchModalIngredient1').text(data.drinks[0].strIngredient1)
+  $('#ingredientSearchModalIngredient2').text(data.drinks[0].strIngredient2)
+  $('#ingredientSearchModalIngredient3').text(data.drinks[0].strIngredient3)
+  $('#ingredientSearchModalIngredient4').text(data.drinks[0].strIngredient4)
+  $('#ingredientSearchModalIngredient5').text(data.drinks[0].strIngredient5)
+  $('#ingredientSearchModalIngredient6').text(data.drinks[0].strIngredient6)
+  $('#ingredientSearchModalIngredient7').text(data.drinks[0].strIngredient7)
+  $('#ingredientSearchModalIngredient8').text(data.drinks[0].strIngredient8)
+
+  $('#ingredientSearchModalQuantity1').text(data.drinks[0].strMeasure1)
+  $('#ingredientSearchModalQuantity2').text(data.drinks[0].strMeasure2)
+  $('#ingredientSearchModalQuantity3').text(data.drinks[0].strMeasure3)
+  $('#ingredientSearchModalQuantity4').text(data.drinks[0].strMeasure4)
+  $('#ingredientSearchModalQuantity5').text(data.drinks[0].strMeasure5)
+  $('#ingredientSearchModalQuantity6').text(data.drinks[0].strMeasure6)
+  $('#ingredientSearchModalQuantity7').text(data.drinks[0].strMeasure7)
+  $('#ingredientSearchModalQuantity8').text(data.drinks[0].strMeasure8)
+
+  $('#ingredientSearchModalInstructions').text(data.drinks[0].strInstructions)
+  $('#ingredientSearchModalGlass').text(`Best served in a ${data.drinks[0].strGlass.toLowerCase()}`)
 }
 
 

@@ -184,6 +184,47 @@ const addToCabinetFromSearch = function ( idDrink, strDrink, strGlass, strInstru
   })
 }
 
+const addToCabinetFromIngredientSearch = function () {
+  console.log('adding to cabinet')
+  console.log(store)
+  return $.ajax({
+    url: config.apiUrl + '/drinks',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      drink: {
+        idDrink: store.drinksFromIngredientSearch.idDrink,
+        strDrink: store.drinksFromIngredientSearch.strDrink,
+        strGlass: store.drinksFromIngredientSearch.strGlass,
+        strInstructions: store.drinksFromIngredientSearch.strInstructions,
+        strDrinkThumb: store.drinksFromIngredientSearch.strDrinkThumb,
+        strIngredient1: store.drinksFromIngredientSearch.strIngredient1,
+        strIngredient2: store.drinksFromIngredientSearch.strIngredient2,
+        strIngredient3: store.drinksFromIngredientSearch.strIngredient3,
+        strIngredient4: store.drinksFromIngredientSearch.strIngredient4,
+        strIngredient5: store.drinksFromIngredientSearch.strIngredient5,
+        strIngredient6: store.drinksFromIngredientSearch.strIngredient6,
+        strIngredient7: store.drinksFromIngredientSearch.strIngredient7,
+        strIngredient8: store.drinksFromIngredientSearch.strIngredient8,
+        strIngredient9: store.drinksFromIngredientSearch.strIngredient9,
+        strIngredient10: store.drinksFromIngredientSearch.strIngredient10,
+        strMeasure1: store.drinksFromIngredientSearch.strMeasure1,
+        strMeasure2: store.drinksFromIngredientSearch.strMeasure2,
+        strMeasure3: store.drinksFromIngredientSearch.strMeasure3,
+        strMeasure4: store.drinksFromIngredientSearch.strMeasure4,
+        strMeasure5: store.drinksFromIngredientSearch.strMeasure5,
+        strMeasure6: store.drinksFromIngredientSearch.strMeasure6,
+        strMeasure7: store.drinksFromIngredientSearch.strMeasure7,
+        strMeasure8: store.drinksFromIngredientSearch.strMeasure8,
+        strMeasure9: store.drinksFromIngredientSearch.strMeasure9,
+        strMeasure10: store.drinksFromIngredientSearch.strMeasure10
+      }
+    }
+  })
+}
+
 module.exports = {
   getRandomDrink,
   searchDrinkDatabase,
@@ -193,6 +234,7 @@ module.exports = {
   deleteDrink,
   updateDrink,
   addToCabinetFromSearch,
-  getIngredient
+  getIngredient,
+  addToCabinetFromIngredientSearch
 }
 

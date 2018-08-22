@@ -87,7 +87,6 @@ $(() => {
   }
 
   const onAddToCabinetFromSearch = function (event) {
-
     event.preventDefault()
     console.log('adding from results')
 
@@ -139,6 +138,16 @@ $(() => {
       .then(drinkUI.getIngredientSuccess)
       .catch(drinkUI.failure)
 
+  }
+
+  const onAddToCabinetFromIngredientSearch = function (event) {
+    event.preventDefault()
+    console.log('adding from search')
+    drinkAPI.addToCabinetFromIngredientSearch()
+      // .then(() => onGetCabinet(event))
+      // .then(() => onGetRandomDrink(event))
+      // .then(drinkUI.addToCabinetSuccess)
+      // .catch(drinkUI.failure)
 
   }
 
@@ -168,6 +177,7 @@ $(() => {
 
   $('#ingredientSearchField').on('click', '.ingredientImage', onIngredientDetails)
 
+  $('#addToCabinetModalButtonIngredient').on('click', onAddToCabinetFromIngredientSearch)
 
   $('#randomDrink').click()
 })
