@@ -5,7 +5,7 @@
 
   {{#each drinks as |drink|}} {{log drink}}
 
-  <div class="card col-4" style="width: 18rem;" id="cardTest{{drink.idDrink}}" data-id="{{drink.idDrink}}">
+  <div class="card  col-4" id="cardTest{{drink.idDrink}}" data-id="{{drink.idDrink}}">
     <img class="card-img-top" src="{{drink.strDrinkThumb}}" alt="Card image cap">
     <div class="card-body" data-id="{{drink.idDrink}}">
       <h5 class="card-title">{{drink.strDrink}}</h5>
@@ -39,7 +39,7 @@
         data-strMeasure9= "{{drink.strMeasure9}}"
         data-strMeasure10= "{{drink.strMeasure10}}"
   >
-      <a href="#" class="btn btn-primary addSearchResult">Add to cabinet</a>
+      <a href="#" class="btn btn-primary addSearchResult">log in to save</a>
 </div>
 
 
@@ -61,8 +61,8 @@
         <div class="modal-body">
           <table style="width:100%">
             <tr>
-              <th>Ingredient</th>
-              <th>Quantity</th>
+              <th><b><u>Ingredient</u></b></th>
+              <th><b><u>Quantity</u></b></th>
             </tr>
             <tr>
               <td>{{drink.strIngredient1}}</td>

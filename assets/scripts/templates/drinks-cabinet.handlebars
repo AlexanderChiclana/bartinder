@@ -4,7 +4,7 @@
 
 <section>
   <div class="container py-3">
-    <div class="card">
+    <div class="card border-primary">
       <div class="row ">
         <div class="col-md-4">
           <img src="{{drink.strDrinkThumb}}" class="w-100">
@@ -91,10 +91,10 @@
 
 
 {{!-- modal for recipes --}}
-<div class="modal clearModal" id="editModal{{drink.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal clearModal " id="editModal{{drink.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content ">
       <div class="modal-header">
         <h5 class="modal-title">{{drink.strDrink}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

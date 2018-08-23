@@ -60,7 +60,15 @@ const searchDrinkDatabaseSuccess = (data) => {
   $('#homepage').css('display', 'none')
   $('#ingredientSearchField').css('display', 'none')
   $('#cabinet').css('display', 'none')
+  $('#drinkSearchForm').trigger('reset')
 
+  if (store.user.email === store.user.email) {
+    console.log('user here')
+    $('.addSearchResult').text('add to cabinet')
+  } else {
+    $('.addSearchResult').text('log in to save')
+  }
+  // console.log(store.user.email)
 }
 
 const searchIngredientDatabaseSuccess = (data) => {
@@ -73,6 +81,7 @@ const searchIngredientDatabaseSuccess = (data) => {
   $('#homepage').css('display', 'none')
   $('#searchResults').css('display', 'none')
   $('#cabinet').css('display', 'none')
+  $('#drinkIngredientSearchForm').trigger('reset')
 
   // $('#homepage').css('display', 'none')
 }

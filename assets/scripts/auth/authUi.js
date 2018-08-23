@@ -47,6 +47,7 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function () {
+  store.user = {}
   $('#entryToggle').css('display', 'block')
   $('#exitToggle').css('display', 'none')
   $('#cabinetButton').css('display', 'none')
