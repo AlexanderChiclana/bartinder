@@ -20,7 +20,7 @@
 <body>
 
   <!-- navbar start  -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
 
 
     <a class="navbar-brand" href="#">BarTinder</a>
@@ -53,13 +53,13 @@
         <!-- search by ingredient -->
         <form id="drinkIngredientSearchForm" class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Ingredient</button>
+          <button class="btn btn-danger my-2 my-sm-0 padded" type="submit">Search By Ingredient</button>
         </form>
 
         <!-- search by name form  -->
         <form id="drinkSearchForm" class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Name</button>
+          <button class="btn btn-danger my-2 my-sm-0 padded" type="submit">Search By Name</button>
         </form>
 
         <li class="nav-item dropdown" id="exitToggle">
@@ -392,8 +392,9 @@
   <div id="centeredContent" align="center">
 
     <!-- homepage -->
-    <h1 id="title">BarTinder</h1>
-    <div id="homepage">
+    <div id="homepage" class="text-primary">
+        <h1 class="text-white title">BarTinder</h1>
+
       <!-- random section -->
 
 
@@ -401,11 +402,11 @@
         <img id="randomDrinkImg" class="card-img-top" src="" alt="Card image cap">
         <div class="card-body">
 
-            <h5 id="randomDrinkName" class="card-title">Drink Name</h5>
+            <h5 id="randomDrinkName" class="card-title text-primary">Drink Name</h5>
 
-          <button id="randomDrink" class="btn btn-secondary">Skip Drink</button>
-          <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#instructionModalCenter">Instructions</a>
-          <a href="#" class="btn btn-primary addSearchResult" id="addtoCabinetButton">Log in to Save</a>
+          <button id="randomDrink" class="btn btn-outline-secondary btn-sm">Skip Drink</button>
+          <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#instructionModalCenter">Instructions</a>
+          <a href="#" class="btn btn-primary addSearchResult btn-sm" id="addtoCabinetButton">Log in to Save</a>
           <br>
 
           <p id="randomDrinkInstructions" class="card-text"></p>
@@ -447,17 +448,17 @@
     <!-- end of homepage -->
 
     <!-- area for handlebars search -->
-    <div id="searchResults" class="content col-8">
+    <div id="searchResults" class="content col-8 text-primary">
 
     </div>
 
-    <div id="cabinet">
+    <div id="cabinet" class="text-primary">
 
 
     </div>
 
     <!-- search by ingredient section  -->
-    <div id="ingredientSearchField" class="content col-8">
+    <div id="ingredientSearchField" class="content col-8 text-primary">
 
 
     </div>

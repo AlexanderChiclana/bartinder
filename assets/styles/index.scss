@@ -17,11 +17,20 @@
 // }
 
 body{
-  // background-image: url('https://wallpaperstudio10.com/static/wpdb/wallpapers/1920x1080/179127.jpg');
-  // background-attachment: fixed;
-  background-color: lavender;
+  background-image: url('https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg');
+  background-attachment: fixed;
 }
 
-#title{
-  padding-top: 60px;
+.title{
+  padding-top: 80px;
+  padding-bottom: 15px;
+}
+
+nav{
+  padding-top:8px !important;
+  padding-bottom: 8px !important;
+}
+
+.padded {
+  margin-right: 10px !important;
 }
