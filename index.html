@@ -50,8 +50,8 @@
 
       <ul class="navbar-nav ml-auto">
 
-              <!-- search by ingredient -->
-      <form id="drinkIngredientSearchForm" class="form-inline my-2 my-lg-0">
+        <!-- search by ingredient -->
+        <form id="drinkIngredientSearchForm" class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Ingredient</button>
         </form>
@@ -62,27 +62,27 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search By Name</button>
         </form>
 
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Account
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changePasswordModalCenter">Change Password</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logOutModalCenter">Sign Out</a>
-              </div>
-            </li>
+        <li class="nav-item dropdown" id="exitToggle">
+          <a class="nav-link dropdown-toggle" href="#" id="accountEmail" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changePasswordModalCenter">Change Password</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logOutModalCenter">Sign Out</a>
+          </div>
+        </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="signInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Sign In
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signUpModalCenter">Sign Up</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signInModalCenter">Sign In</a>
-              </div>
-            </li>
+        <li class="nav-item dropdown" id="entryToggle">
+          <a class="nav-link dropdown-toggle" href="#" id="signInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Sign In
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signUpModalCenter">Sign Up</a>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signInModalCenter">Sign In</a>
+          </div>
+        </li>
       </ul>
 
 
@@ -130,37 +130,37 @@
     </div>
   </div>
 
-<!-- sign in modal -->
+  <!-- sign in modal -->
 
-<div class="modal fade" id="signInModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Sign In</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+  <div class="modal fade" id="signInModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
           <form id="sign-in">
-              <h4 class="display-4">Sign In</h4>
-              <div class="form-group">
-                <input type="email" name="credentials[email]" value="" class="form-control" id="logInEmail" aria-describedby="emailHelp"
-                  placeholder="email">
-                <input type="password" name="credentials[password]" value="" class="form-control" id="logInPassword" placeholder="Password">
-                <input type="submit" name="submit" class="btn btn-primary">
-              </div>
-            </form>
+            <h4 class="display-4">Sign In</h4>
+            <div class="form-group">
+              <input type="email" name="credentials[email]" value="" class="form-control" id="logInEmail" aria-describedby="emailHelp"
+                placeholder="email">
+              <input type="password" name="credentials[password]" value="" class="form-control" id="logInPassword" placeholder="Password">
+              <input type="submit" name="submit" class="btn btn-primary" >
+            </div>
+          </form>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <!-- sign out modal -->
   <div class="modal fade" id="logOutModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -274,7 +274,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="addToCabinetModalButton">add to cabinet</button>
+          <button type="button" class="btn btn-primary addSearchResult" id="addToCabinetModalButton">Log in to save</button>
         </div>
       </div>
     </div>
@@ -343,7 +343,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="addToCabinetModalButtonIngredient">Add to cabinet</button>
+          <button type="button" class="btn btn-primary" id="addToCabinetModalButtonIngredient" data-dismiss="modal">Log in to save</button>
         </div>
       </div>
     </div>
@@ -361,7 +361,14 @@
       <div class="card" style="width: 30rem;">
         <img id="randomDrinkImg" class="card-img-top" src="" alt="Card image cap">
         <div class="card-body">
-          <h5 id="randomDrinkName" class="card-title">Drink Name</h5>
+
+            <h5 id="randomDrinkName" class="card-title">Drink Name</h5>
+
+          <button id="randomDrink" class="btn btn-secondary">Skip Drink</button>
+          <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#instructionModalCenter">Instructions</a>
+          <a href="#" class="btn btn-primary addSearchResult" id="addtoCabinetButton">Log in to Save</a>
+          <br>
+
           <p id="randomDrinkInstructions" class="card-text"></p>
 
 
@@ -388,10 +395,10 @@
               <td id="randomIngredient6"></td>
             </tr>
           </table>
-          <br>
-          <button id="randomDrink" class="btn btn-secondary">Skip Drink</button>
+          <!-- <br> -->
+          <!-- <button id="randomDrink" class="btn btn-secondary">Skip Drink</button>
           <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#instructionModalCenter">Instructions</a>
-          <a href="#" class="btn btn-primary" id="addtoCabinetButton">Add To Cabinet</a>
+          <a href="#" class="btn btn-primary" id="addtoCabinetButton">Add To Cabinet</a> -->
 
         </div>
       </div>
@@ -406,6 +413,7 @@
     </div>
 
     <div id="cabinet">
+
 
     </div>
 

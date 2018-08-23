@@ -20,6 +20,12 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (data) {
   store.user = data.user
   console.log('signed in')
+  $('#entryToggle').css('display', 'none')
+  $('#exitToggle').css('display', 'block')
+  $('#cabinetButton').css('display', 'block')
+  $('#accountEmail').text(data.user.email)
+  $('#addToCabinetModalButtonIngredient').text('Add To Cabinet')
+  $('.addSearchResult').text('Add To Cabinet')
 }
 const onSignInFailure = function (error) {
   $('#sign-in').trigger('reset')
@@ -36,8 +42,16 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function () {
+  $('#entryToggle').css('display', 'block')
+  $('#exitToggle').css('display', 'none')
+  $('#cabinetButton').css('display', 'none')
+  $('#addToCabinetModalButtonIngredient').text('Log in to save')
+  $('.addSearchResult').text('Log in to save')
 
-  location.reload()
+
+
+
+  // location.reload()
 
 }
 
