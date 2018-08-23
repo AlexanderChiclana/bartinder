@@ -89,7 +89,7 @@
 
 
 {{!-- modal for recipes --}}
-<div class="modal fade" id="editModal{{drink.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal clearModal" id="editModal{{drink.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -164,7 +164,7 @@
         {{!-- <input type='text' name='drink[strDrink]' class="form-control" value="{{drink.strDrink}}"> --}}
         <textarea type='text' name='drink[strInstructions]' class="form-control" rows="5">{{drink.strInstructions}}</textarea>
           <div data-id="{{drink.id}}">
-            <button type="button" class="btn btn-primary updateButton"  data-dismiss="modal">Update</button>
+            <button type="button" class="btn btn-primary updateButton">Update</button>
           </div>
         </form>
       </div>

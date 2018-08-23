@@ -82,6 +82,7 @@ $(() => {
     event.preventDefault()
     console.log('updating')
     // const data = getFormFields(event.target.form)
+
     const data = getFormFields(event.target.form)
     const drinkID = $(event.target).closest('div').attr('data-id')
     console.log(data)

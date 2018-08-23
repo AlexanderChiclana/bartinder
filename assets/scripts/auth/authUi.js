@@ -26,6 +26,9 @@ const onSignInSuccess = function (data) {
   $('#accountEmail').text(data.user.email)
   $('#addToCabinetModalButtonIngredient').text('Add To Cabinet')
   $('.addSearchResult').text('Add To Cabinet')
+
+  $('#signInModalCenter').modal('toggle')
+
 }
 const onSignInFailure = function (error) {
   $('#sign-in').trigger('reset')
@@ -34,6 +37,8 @@ const onSignInFailure = function (error) {
 const onChangePasswordSuccess = function () {
   $('#change-password').trigger('reset')
   $('#passwordField').text('Changed password successfully')
+  $('#changePasswordModalCenter').modal('toggle')
+
 }
 
 const onChangePasswordFailure = function () {
@@ -47,6 +52,8 @@ const onSignOutSuccess = function () {
   $('#cabinetButton').css('display', 'none')
   $('#addToCabinetModalButtonIngredient').text('Log in to save')
   $('.addSearchResult').text('Log in to save')
+  $('#logOutModalCenter').modal('toggle')
+
 
 
 

@@ -119,7 +119,9 @@ const getCabinetSuccess = (data) => {
 }
 
 const onUpdateDrinkSuccess = function () {
+  $('.clearModal').modal('hide')
   $('#cabinetButton').click()
+
 }
 const failure = function () {
   console.log('request failed')
