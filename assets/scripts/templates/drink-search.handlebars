@@ -5,9 +5,9 @@
 
   {{#each drinks as |drink|}} {{log drink}}
 
-  <div class="card  col-4" id="cardTest{{drink.idDrink}}" data-id="{{drink.idDrink}}">
-    <img class="card-img-top" src="{{drink.strDrinkThumb}}" alt="Card image cap">
-    <div class="card-body" data-id="{{drink.idDrink}}">
+  <div class="card  customBackground col-4" id="cardTest{{drink.idDrink}}" data-id="{{drink.idDrink}}">
+    <img class="card-img-top paddingCard" src="{{drink.strDrinkThumb}}" alt="Card image cap">
+    <div class="card-body " data-id="{{drink.idDrink}}">
       <h5 class="card-title">{{drink.strDrink}}</h5>
       {{!-- <h6 class="card-title"> {{drink.idDrink}}</h6>
       <p class="card-text">This is where the drink description goes</p> --}}
@@ -48,7 +48,7 @@
   </div>
 
   {{!-- modal for recipes --}}
-  <div class="modal fade" id="searchModal{{drink.idDrink}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  <div class="modal fade " id="searchModal{{drink.idDrink}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
