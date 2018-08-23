@@ -27,7 +27,7 @@ const onSignInSuccess = function (data) {
   $('#addToCabinetModalButtonIngredient').text('Add To Cabinet')
   $('.addSearchResult').text('Add To Cabinet')
 
-  $('#signInModalCenter').modal('toggle')
+  // $('#signInModalCenter').modal('toggle')
 
 }
 const onSignInFailure = function (error) {
