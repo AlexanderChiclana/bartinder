@@ -8,8 +8,8 @@ const store = require('../store')
 const getRandomDrinkSuccess = function (data) {
   store.drinks = data.drinks[0]
 
-  console.log('got random')
-  console.log(store)
+  // console.log('got random')
+  // console.log(store)
   $('#testData').html(data.drinks[0].strIngredient1)
   $('#randomDrinkImg').attr('src', data.drinks[0].strDrinkThumb)
   $('#randomDrinkName').text(data.drinks[0].strDrink)
@@ -63,7 +63,7 @@ const searchDrinkDatabaseSuccess = (data) => {
   $('#drinkSearchForm').trigger('reset')
 
   if (store.user.email === store.user.email) {
-    console.log('user here')
+    // console.log('user here')
     $('.addSearchResult').text('add to cabinet')
   } else {
     $('.addSearchResult').text('log in to save')
@@ -114,17 +114,17 @@ const getIngredientSuccess = function (data) {
 
 const addToCabinetSuccess = function () {
 
-  console.log('added to cabinet')
+  // console.log('added to cabinet')
 }
 
 const getCabinetSuccess = (data) => {
   const showCabinet = drinkCabinetTemplate({
     drinks: data.drinks
   })
-  console.log(data)
-  $('#cabinet').html(showCabinet)
   $('#searchResults').css('display', 'none')
   $('#ingredientSearchField').css('display', 'none')
+  $('#cabinet').html(showCabinet)
+
 }
 
 const onUpdateDrinkSuccess = function () {
@@ -133,7 +133,7 @@ const onUpdateDrinkSuccess = function () {
 
 }
 const failure = function () {
-  console.log('request failed')
+  // console.log('request failed')
 }
 
 module.exports = {

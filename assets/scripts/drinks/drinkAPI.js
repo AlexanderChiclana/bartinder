@@ -5,7 +5,7 @@ const store = require('../store')
 
 
 const getRandomDrink = function () {
-  console.log('getting random drink')
+  // console.log('getting random drink')
   return $.ajax({
     url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
     method: 'GET'
@@ -13,8 +13,8 @@ const getRandomDrink = function () {
 }
 
 const getIngredient = function (drinkID) {
-  console.log('getting drink details')
-  console.log(drinkID)
+  // console.log('getting drink details')
+  // console.log(drinkID)
   return $.ajax({
     url: 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkID,
     method: 'GET'
@@ -22,7 +22,7 @@ const getIngredient = function (drinkID) {
 }
 
 const searchDrinkDatabase = function (data) {
-  console.log('searching')
+  // console.log('searching')
   // console.log(data)
   return $.ajax({
     url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + data.drink.search,
@@ -31,7 +31,7 @@ const searchDrinkDatabase = function (data) {
 }
 
 const searchIngredientDatabase = function (data) {
-  console.log('searching')
+  // console.log('searching')
   // console.log(data)
   return $.ajax({
     url: 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + data.drink.search,
@@ -40,8 +40,8 @@ const searchIngredientDatabase = function (data) {
 }
 
 const addToCabinet = function () {
-  console.log('adding to cabinet')
-  console.log(store)
+  // console.log('adding to cabinet')
+  // console.log(store)
   return $.ajax({
     url: config.apiUrl + '/drinks',
     method: 'POST',
@@ -185,8 +185,8 @@ const addToCabinetFromSearch = function ( idDrink, strDrink, strGlass, strInstru
 }
 
 const addToCabinetFromIngredientSearch = function () {
-  console.log('adding to cabinet')
-  console.log(store)
+  // console.log('adding to cabinet')
+  // console.log(store)
   return $.ajax({
     url: config.apiUrl + '/drinks',
     method: 'POST',

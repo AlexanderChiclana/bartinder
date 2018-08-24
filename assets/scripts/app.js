@@ -42,7 +42,7 @@ $(() => {
 
   const onAddToCabinet = function (event) {
     event.preventDefault()
-    console.log('working off click')
+    // console.log('working off click')
     drinkAPI.addToCabinet()
       // .then(() => onGetCabinet(event))
       .then(() => onGetRandomDrink(event))
@@ -70,9 +70,9 @@ $(() => {
 
   const onDeleteDrink = (event) => {
     event.preventDefault()
-    console.log('delete button working')
+    // console.log('delete button working')
     const drinkID = $(event.target).closest('div').attr('data-id')
-    console.log(drinkID)
+    // console.log(drinkID)
     drinkAPI.deleteDrink(drinkID)
       .then(() => onGetCabinet(event))
       .catch(drinkUI.failure)
@@ -80,13 +80,13 @@ $(() => {
 
   const onUpdateDrink = function (event) {
     event.preventDefault()
-    console.log('updating')
+    // console.log('updating')
     // const data = getFormFields(event.target.form)
 
     const data = getFormFields(event.target.form)
     const drinkID = $(event.target).closest('div').attr('data-id')
-    console.log(data)
-    console.log(drinkID)
+    // console.log(data)
+    // console.log(drinkID)
     drinkAPI.updateDrink(data, drinkID)
       // .then(() => onGetCabinet(event))
       .then(drinkUI.onUpdateDrinkSuccess)
@@ -95,7 +95,7 @@ $(() => {
 
   const onAddToCabinetFromSearch = function (event) {
     event.preventDefault()
-    console.log('adding from results')
+    // console.log('adding from results')
 
 
     const idDrink= $(event.target).closest('div').attr('data-idDrink')
@@ -139,7 +139,7 @@ $(() => {
 
     const drinkID = $(event.target).closest('div').attr('data-id')
 
-    console.log('bringing up modal')
+    // console.log('bringing up modal')
     $('#ingredientModalCenter').modal('toggle');
     drinkAPI.getIngredient(drinkID)
       .then(drinkUI.getIngredientSuccess)
@@ -149,7 +149,7 @@ $(() => {
 
   const onAddToCabinetFromIngredientSearch = function (event) {
     event.preventDefault()
-    console.log('adding from search')
+    // console.log('adding from search')
     drinkAPI.addToCabinetFromIngredientSearch()
       // .then(() => onGetCabinet(event))
       // .then(() => onGetRandomDrink(event))

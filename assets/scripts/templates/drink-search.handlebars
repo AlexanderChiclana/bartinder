@@ -3,7 +3,9 @@
 <div class="row">
 
 
-  {{#each drinks as |drink|}} {{log drink}}
+  {{#each drinks as |drink|}}
+
+  {{!-- {{log drink}} --}}
 
   <div class="card  customBackground col-4" id="cardTest{{drink.idDrink}}" data-id="{{drink.idDrink}}">
     <img class="card-img-top paddingCard" src="{{drink.strDrinkThumb}}" alt="Card image cap">

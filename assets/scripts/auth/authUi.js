@@ -19,7 +19,7 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (data) {
   store.user = data.user
-  console.log('signed in')
+  // console.log('signed in')
   $('#entryToggle').css('display', 'none')
   $('#exitToggle').css('display', 'block')
   $('#cabinetButton').css('display', 'block')
