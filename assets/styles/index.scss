@@ -23,8 +23,10 @@ body{
 }
 
 .title{
-  padding-top: 80px;
+  padding-top: 90px;
   padding-bottom: 15px;
+  // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 nav{
@@ -47,4 +49,8 @@ nav{
 .customBackground{
   background-image: url('https://cdn.inspirationhut.net/wp-content/uploads/2012/11/Paper-Texture-.jpg');
   // background-image: url('http://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg');
+}
+
+.signInDropdownMenu{
+  width: 300px !important;
 }

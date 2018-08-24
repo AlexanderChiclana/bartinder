@@ -81,7 +81,7 @@
             Sign In
           </a>
           <!-- experimental -->
-          <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-menu dropdown-menu-right signInDropdownMenu text-primary" >
 
               <form class="px-4 py-3" id="sign-in">
                 <div class="form-group">
@@ -152,18 +152,24 @@
               <input type="email" name="credentials[email]" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Email">
               <input type="password" name="credentials[password]" value="" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
               <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" value="" class="form-control"
                 id="exampleInputPassword2">
             </div>
-            <input type="submit" name="submit" class="btn btn-primary">
-          </form>
+
+
+            <!-- <input type="submit" name="submit" class="btn btn-primary">
+          </form> -->
 
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+
+          <input type="submit" name="submit" class="btn btn-primary">
+        </form>
+
+      </div>
       </div>
     </div>
   </div>
