@@ -93,18 +93,18 @@
                   <input type="password" name="credentials[password]" class="form-control" id="logInPassword" placeholder="Password">
                 </div>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                  <label class="form-check-label" for="dropdownCheck">
+                  <!-- <input type="checkbox" class="form-check-input" id="dropdownCheck"> -->
+                  <!-- <label class="form-check-label" for="dropdownCheck">
                     Remember me
-                  </label>
+                  </label> -->
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary float-right" id="loadingToggle">Sign in</button>
               </form>
 
 
 
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#signUpModalCenter">New around here? Sign up</a>
+              <div class="dropdown-divider float-right"></div>
+              <a class="dropdown-item text-right" href="#"  data-toggle="modal" data-target="#signUpModalCenter">New around here? Sign up</a>
             </div>
 <!-- old menu -->
 <!-- <form id="sign-in">
@@ -399,14 +399,14 @@
 
     <!-- homepage -->
     <div id="homepage" class="text-primary">
-        <h1 class="text-white title">BarTinder</h1>
+        <h1 class="text-white title" id="bartinderTitle">BarTinder</h1>
 
       <!-- random section -->
 
 
-      <div class="card border-primary" style="width: 30rem;">
+      <div class="card border-primary" id="randomCard">
         <img id="randomDrinkImg" class="card-img-top" src="" alt="Card image cap">
-        <div class="card-body">
+        <div class="card-body" id="randomCardBody">
 
             <h5 id="randomDrinkName" class="card-title text-primary">Drink Name</h5>
 
@@ -454,7 +454,7 @@
     <!-- end of homepage -->
 
     <!-- area for handlebars search -->
-    <div id="searchResults" class="content col-8 text-primary">
+    <div id="searchResults" class="content col-lg-8 col-md-10 col-sm-12 col-xs-12 text-primary">
 
     </div>
 
@@ -464,7 +464,7 @@
     </div>
 
     <!-- search by ingredient section  -->
-    <div id="ingredientSearchField" class="content col-8 text-primary">
+    <div id="ingredientSearchField" class="content col-lg-8 col-md-10 col-sm-12 col-xs-12 text-primary">
 
 
     </div>

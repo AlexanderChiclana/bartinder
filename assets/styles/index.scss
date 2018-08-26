@@ -20,6 +20,7 @@ body{
   // background-image: url('https://i.pinimg.com/originals/e4/98/1a/e4981a3dd4aa2fa6f0bc84cde9087c7a.jpg');
   background-image: url('https://www.wallpapersbrowse.com/images/13/13lf6sc.png');
   background-attachment: fixed;
+  // background-color: red;
 }
 
 .title{
@@ -48,9 +49,39 @@ nav{
 
 .customBackground{
   background-image: url('https://cdn.inspirationhut.net/wp-content/uploads/2012/11/Paper-Texture-.jpg');
-  // background-image: url('http://media.idownloadblog.com/wp-content/uploads/2017/03/Red-Product-iPad-Wallpaper-without-apple-logo.jpg');
 }
 
 .signInDropdownMenu{
   width: 300px !important;
+}
+
+#randomCard{
+  width: 30rem;
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #randomCardBody{
+      // margin-bottom: 0px;
+      padding-bottom: 8px;
+    }
+
+    #randomCard{
+      width: 25rem;
+    }
+
+    // .cabinetCard{
+    //   width:25rem;
+    // }
+    #bartinderTitle{
+      visibility: hidden;
+      padding-top: 4px;
+    }
+
+    nav{
+      padding-top:12px !important;
+      padding-bottom: 12px !important;
+    }
 }

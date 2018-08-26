@@ -15,6 +15,7 @@ const onSignup = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
+    $('#loadingToggle').text('loading')
   const data = getFormFields(this)
   api.signIn(data)
     .then(ui.onSignInSuccess)
