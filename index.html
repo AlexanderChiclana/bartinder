@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
 
 
-    <a class="navbar-brand" href="#">BarTinder</a>
+    <a class="navbar-brand homepageButton" href="#">BarTinder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#" id="homepageButton">Home
+          <a class="nav-link homepageButton" href="#" id="homepageButton">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
@@ -51,16 +51,17 @@
       <ul class="navbar-nav ml-auto">
 
         <!-- search by ingredient -->
-        <form id="drinkIngredientSearchForm" class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0 drinkIngredientSearchForm desktopSearchMenu">
           <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-danger my-2 my-sm-0 padded" type="submit">Search By Ingredient</button>
         </form>
 
         <!-- search by name form  -->
-        <form id="drinkSearchForm" class="form-inline my-2 my-lg-0">
+        <form  class="form-inline my-2 my-lg-0 drinkSearchForm desktopSearchMenu">
           <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-danger my-2 my-sm-0 padded" type="submit">Search By Name</button>
         </form>
+
 
         <li class="nav-item dropdown" id="exitToggle">
           <a class="nav-link dropdown-toggle" href="#" id="accountEmail" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -106,21 +107,26 @@
               <div class="dropdown-divider float-right"></div>
               <a class="dropdown-item text-right" href="#"  data-toggle="modal" data-target="#signUpModalCenter">New around here? Sign up</a>
             </div>
-<!-- old menu -->
-<!-- <form id="sign-in">
-    <div class="form-group">
-      <input type="email" name="credentials[email]" value="" class="form-control" id="logInEmail" aria-describedby="emailHelp"
-        placeholder="email">
-      <input type="password" name="credentials[password]" value="" class="form-control" id="logInPassword" placeholder="Password">
-    </div> -->
-<!-- end om -->
 
-
-          <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signUpModalCenter">Sign Up</a>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#signInModalCenter">Sign In</a>
-          </div> -->
         </li>
+
+        <!-- mobile menu changes -->
+        <div id="mobileSearchMenu">
+                <!-- mobile search by ingredient -->
+                <form class="form-inline  drinkIngredientSearchForm ">
+                  <input class="form-control col-6 bufferSearch" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger col-6 bufferSearch" type="submit">Ingredient Search</button>
+                </form>
+
+                <!-- mobile search by name form  -->
+                <form  class="form-inline drinkSearchForm">
+                  <input class="form-control col-6 " name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger col-6" type="submit">Search By Name</button>
+                </form>
+            </div>
+
+
+
       </ul>
 
 

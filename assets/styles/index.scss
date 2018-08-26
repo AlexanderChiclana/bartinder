@@ -52,12 +52,17 @@ nav{
 }
 
 .signInDropdownMenu{
-  width: 300px !important;
+  width: 300px;
 }
 
 #randomCard{
   width: 30rem;
 }
+
+#mobileSearchMenu{
+  display: none;
+}
+
 
 @media only screen
   and (min-device-width: 375px)
@@ -84,4 +89,21 @@ nav{
       padding-top:12px !important;
       padding-bottom: 12px !important;
     }
+    .customBackground{
+      margin-bottom: 15px;
+    }
+    .desktopSearchMenu{
+      display:none;
+    }
+    #mobileSearchMenu{
+      display:block;
+    }
+    .bufferSearch{
+      margin-bottom: 5px;
+    }
+    .signInDropdownMenu{
+      width: 380px;
+      margin-bottom: 5px;
+    }
+
 }

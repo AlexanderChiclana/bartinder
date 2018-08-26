@@ -165,14 +165,14 @@ $(() => {
   $('#randomDrinkImg').on('click', onGetRandomDrink)
 
 // search bar functions
-  $('#drinkSearchForm').on('submit', onSearchDrinkDatabase)
-  $('#drinkIngredientSearchForm').on('submit', onSearchIngredientDatabase)
+  $('.drinkSearchForm').on('submit', onSearchDrinkDatabase)
+  $('.drinkIngredientSearchForm').on('submit', onSearchIngredientDatabase)
 
 
   $('#addtoCabinetButton').on('click', onAddToCabinet)
   $('#addToCabinetModalButton').on('click', onAddToCabinet)
 
-  $('#homepageButton').on('click', showHomePage)
+  $('.homepageButton').on('click', showHomePage)
   $('#cabinetButton').on('click', onGetCabinet)
 
   $('#cabinet').on('click', '.deleteDrink', onDeleteDrink)
