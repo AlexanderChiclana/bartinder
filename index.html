@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+  <title>BarTinder</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+  <!-- scalable tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <!-- navbar start  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" >
+
+
+    <a class="navbar-brand homepageButton" href="#">BarTinder</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link homepageButton" href="#" id="homepageButton">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#" id="cabinetButton">Cabinet
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+
+
+
+
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+
+        <!-- search by ingredient -->
+        <form class="form-inline my-2 my-lg-0 drinkIngredientSearchForm desktopSearchMenu">
+          <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-danger my-2 my-sm-0 padded" type="submit">Search By Ingredient</button>
+        </form>
+
+        <!-- search by name form  -->
+        <form  class="form-inline my-2 my-lg-0 drinkSearchForm desktopSearchMenu">
+          <input class="form-control mr-sm-2" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-danger my-2 my-sm-0 padded" type="submit">Search By Name</button>
+        </form>
+
+
+        <li class="nav-item dropdown" id="exitToggle">
+          <a class="nav-link dropdown-toggle" href="#" id="accountEmail" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Account
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#changePasswordModalCenter">Change Password</a>
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logOutModalCenter">Sign Out</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown" id="entryToggle">
+          <a class="nav-link dropdown-toggle" href="#" id="signInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Sign In
+          </a>
+          <!-- experimental -->
+          <div class="dropdown-menu dropdown-menu-right signInDropdownMenu text-primary" >
+
+              <form class="px-4 py-3" id="sign-in">
+                <div class="form-group">
+                  <label for="logInEmail">Email address</label>
+                  <input type="email"  name="credentials[email]" class="form-control" id="logInEmail" placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="logInPassword" >Password</label>
+                  <input type="password" name="credentials[password]" class="form-control" id="logInPassword" placeholder="Password">
+                </div>
+                <div class="form-check">
+                  <!-- <input type="checkbox" class="form-check-input" id="dropdownCheck"> -->
+                  <!-- <label class="form-check-label" for="dropdownCheck">
+                    Remember me
+                  </label> -->
+                </div>
+                <button type="submit" class="btn btn-primary float-right" id="loadingToggle">Sign in</button>
+              </form>
+
+
+
+              <div class="dropdown-divider float-right"></div>
+              <a class="dropdown-item text-right" href="#"  data-toggle="modal" data-target="#signUpModalCenter">New around here? Sign up</a>
+            </div>
+
+        </li>
+
+        <!-- mobile menu changes -->
+        <div id="mobileSearchMenu">
+                <!-- mobile search by ingredient -->
+                <form class="form-inline  drinkIngredientSearchForm ">
+                  <input class="form-control col-7 bufferSearch" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger col-5 bufferSearch mobileButton" type="submit">Ingredient Filter</button>
+                </form>
+
+                <!-- mobile search by name form  -->
+                <form  class="form-inline drinkSearchForm">
+                  <input class="form-control col-7 " name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger col-5 mobileButton" type="submit">Search By Name</button>
+                </form>
+            </div>
+
+
+
+      </ul>
+
+
+      <ul>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- navbar end  -->
+
+  <!-- navbar modals -->
+
+  <!-- modal for sign up -->
+  <div class="modal fade" id="signUpModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <form id="sign-up">
+            <div class="form-group">
+              <input type="email" name="credentials[email]" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Email">
+              <input type="password" name="credentials[password]" value="" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+              <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" value="" class="form-control"
+                id="exampleInputPassword2">
+            </div>
+
+
+            <!-- <input type="submit" name="submit" class="btn btn-primary">
+          </form> -->
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <input type="submit" name="submit" class="btn btn-primary">
+        </form>
+
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sign in modal -->
+
+  <div class="modal fade" id="signInModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- <form id="sign-in">
+            <div class="form-group">
+              <input type="email" name="credentials[email]" value="" class="form-control" id="logInEmail" aria-describedby="emailHelp"
+                placeholder="email">
+              <input type="password" name="credentials[password]" value="" class="form-control" id="logInPassword" placeholder="Password">
+            </div> -->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          <input type="submit" name="submit" class="btn btn-primary" >
+
+        </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sign out modal -->
+  <div class="modal fade" id="logOutModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Log Out</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to log out?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- sign out -->
+          <form id="sign-out">
+            <input type="submit" class="btn btn-primary" value="Sign Out" >
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- change-password modal -->
+  <div class="modal fade" id="changePasswordModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- change pw -->
+          <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="Current Password" class="form-control">
+            <input type="password" name="passwords[new]" placeholder="New Password" class="form-control">
+
+
+        </div>
+        <div class="modal-footer">
+          <input type="submit" name="submit" class="btn btn-primary">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for random content-->
+  <div class="modal fade text-primary" id="instructionModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLongTitle">Instructions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table style="width:100%">
+            <tr>
+              <th><b><u>Ingredient</u></b></th>
+              <th><b><u>Quantity</u></b></th>
+            </tr>
+            <tr>
+              <td id="modalIngredient1"></td>
+              <td id="modalQuantity1"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient2"></td>
+              <td id="modalQuantity2"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient3"></td>
+              <td id="modalQuantity3"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient4"></td>
+              <td id="modalQuantity4"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient5"></td>
+              <td id="modalQuantity5"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient6"></td>
+              <td id="modalQuantity6"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient7"></td>
+              <td id="modalQuantity7"></td>
+            </tr>
+            <tr>
+              <td id="modalIngredient8"></td>
+              <td id="modalQuantity8"></td>
+            </tr>
+          </table>
+          <br>
+          <p id="modalInstructions">
+
+          </p>
+          <br>
+          <p id="modalGlass">
+
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary addSearchResult" id="addToCabinetModalButton">Log in to save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal random end -->
+
+  <!-- modal for ingredients -->
+  <div class="modal fade text-primary" id="ingredientModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Instructions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-primary">
+          <table style="width:100%">
+            <tr>
+              <th>Ingredient</th>
+              <th>Quantity</th>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient1"></td>
+              <td id="ingredientSearchModalQuantity1"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient2"></td>
+              <td id="ingredientSearchModalQuantity2"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient3"></td>
+              <td id="ingredientSearchModalQuantity3"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient4"></td>
+              <td id="ingredientSearchModalQuantity4"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient5"></td>
+              <td id="ingredientSearchModalQuantity5"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient6"></td>
+              <td id="ingredientSearchModalQuantity6"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient7"></td>
+              <td id="ingredientSearchModalQuantity7"></td>
+            </tr>
+            <tr>
+              <td id="ingredientSearchModalIngredient8"></td>
+              <td id="ingredientSearchModalQuantity8"></td>
+            </tr>
+          </table>
+          <br>
+          <p id="ingredientSearchModalInstructions">
+
+          </p>
+          <br>
+          <p id="ingredientSearchModalGlass">
+
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="addToCabinetModalButtonIngredient" data-dismiss="modal">Log in to save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end modal for ingredients -->
+
+  <div id="centeredContent" align="center">
+
+    <!-- homepage -->
+    <div id="homepage" class="text-primary">
+        <h1 class="text-white title" id="bartinderTitle">BarTinder</h1>
+
+      <!-- random section -->
+
+
+      <div class="card border-primary" id="randomCard">
+        <img id="randomDrinkImg" class="card-img-top" src="" alt="Card image cap">
+        <div class="card-body" id="randomCardBody">
+
+            <h5 id="randomDrinkName" class="card-title text-primary">Drink Name</h5>
+
+          <button id="randomDrink" class="btn btn-outline-secondary btn-sm">Skip Drink</button>
+          <a href="#" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#instructionModalCenter">Instructions</a>
+          <a href="#" class="btn btn-primary addSearchResult btn-sm" id="addtoCabinetButton">Log in to Save</a>
+          <br>
+
+          <p id="randomDrinkInstructions" class="card-text"></p>
+
+
+          <table id="randomIngredientList" style="width:100%">
+            <tr>
+              <th>About Me</th>
+            </tr>
+            <tr>
+              <td id="randomIngredient1"></td>
+            </tr>
+            <tr>
+              <td id="randomIngredient2"></td>
+            </tr>
+            <tr>
+              <td id="randomIngredient3"></td>
+            </tr>
+            <tr>
+              <td id="randomIngredient4"></td>
+            </tr>
+            <tr>
+              <td id="randomIngredient5"></td>
+            </tr>
+            <tr>
+              <td id="randomIngredient6"></td>
+            </tr>
+          </table>
+          <!-- <br> -->
+          <!-- <button id="randomDrink" class="btn btn-secondary">Skip Drink</button>
+          <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#instructionModalCenter">Instructions</a>
+          <a href="#" class="btn btn-primary" id="addtoCabinetButton">Add To Cabinet</a> -->
+
+        </div>
+      </div>
+
+      <!-- end of random section -->
+    </div>
+    <!-- end of homepage -->
+
+    <!-- area for handlebars search -->
+    <div id="searchResults" class="content col-lg-8 col-md-10 col-sm-12 col-xs-12 text-primary">
+
+    </div>
+
+    <div id="cabinet" class="text-primary">
+
+
+    </div>
+
+    <!-- search by ingredient section  -->
+    <div id="ingredientSearchField" class="content col-lg-8 col-md-10 col-sm-12 col-xs-12 text-primary">
+
+
+    </div>
+
+  </div>
+  <script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
+
+</body>
+
+</html>
