@@ -105,9 +105,14 @@ nav{
       width: 380px;
       margin-bottom: 5px;
     }
-    body{
+    #homepage{
       background-image: none !important;
       background-color: #1a1a1a;
+      width: 400px;
+    }
+    .mobileButton{
+      padding-left: 0px;
+      padding-right: 0px;
     }
 
 }

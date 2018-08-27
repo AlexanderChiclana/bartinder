@@ -6,7 +6,11 @@
 
 
   <title>BarTinder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+  <!-- scalable tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0"/>
+
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -114,14 +118,14 @@
         <div id="mobileSearchMenu">
                 <!-- mobile search by ingredient -->
                 <form class="form-inline  drinkIngredientSearchForm ">
-                  <input class="form-control col-6 bufferSearch" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-danger col-6 bufferSearch" type="submit">Ingredient Search</button>
+                  <input class="form-control col-7 bufferSearch" name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger col-5 bufferSearch mobileButton" type="submit">Ingredient Filter</button>
                 </form>
 
                 <!-- mobile search by name form  -->
                 <form  class="form-inline drinkSearchForm">
-                  <input class="form-control col-6 " name='drink[search]' type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-danger col-6" type="submit">Search By Name</button>
+                  <input class="form-control col-7 " name='drink[search]' type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-danger col-5 mobileButton" type="submit">Search By Name</button>
                 </form>
             </div>
 
